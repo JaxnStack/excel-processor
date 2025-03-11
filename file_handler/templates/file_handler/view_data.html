@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Data</title>
+</head>
+<body>
+    <h2>Processed Data</h2>
+    {% if table %}
+        {{ table|safe }}
+        <br>
+        <a href="{% url 'download_file' %}"><button>Download Excel</button></a>
+    {% else %}
+        <p>No data available. Please upload a file first.</p>
+    {% endif %}
+    <br><br>
+    <a href="{% url 'upload_file' %}"><button>Back to Upload</button></a>
+</body>
+</html>
